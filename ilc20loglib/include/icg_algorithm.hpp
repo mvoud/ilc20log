@@ -3,11 +3,30 @@
 #include "icg_ConosleAnsiiColorsCodes.hpp"
 #include <iostream>
 
+#if defined(__APPLE__)
+const std::string osName = "macOS";
+#elif defined(__linux__)
+const std::string osName = "Linux";
+#elif defined(_WIN32)
+const std::string osName = "Windows";
+#else
+const std::string osName = "Unknown";
+#endif
+
 class ic20_algorithm {
 	bool ic20_athm_initCalled = false;
+	bool ic20_device_gbPrint = false;
 public:
 	bool ic20_athm_init() {
 		this->ic20_athm_initCalled = true;
+
+		if (osName == "Windows") {
+			this->ic20_device_gbPrint = false;
+		}
+		else if (osName == "Linux" or "macOS") {
+			this->ic20_device_gbPrint = true;
+		}
+
 		return 0;
 	}
 	void ilc20_exampleMessages() {
@@ -21,6 +40,9 @@ public:
 		this->messageType(ICG20_CONSOLE_LOGGER_TYPE_FILE).c20_print("ilc20");
 		this->messageType(ICG20_CONSOLE_LOGGER_TYPE_SHADER).c20_print("ilc20");
 		this->messageType(ICG20_CONSOLE_LOGGER_TYPE_SHADER_DEBUG).c20_print("ilc20");
+		this->messageType(ICG20_CONSOLE_LOGGER_TYPE_SYSTEM).c20_print("ilc20");
+		this->messageType(ICG20_CONOSLE_LOGGER_TYPE_WEBENGINE).c20_print("ilc20");
+		this->messageType(ICG20_CONSOLE_LOGGER_TYPE_DOWNLOAD).c20_print("ilc20");
 	}
 	void ilc20_colorMessage(std::string messageInput, ilc20_avabileColors inputColors) {
 		if (inputColors == ilc20_avabileColors::Blue) {
@@ -49,35 +71,123 @@ public:
 			switch (avabileTypes)
 			{
 			case ICG20_CONSOLE_LOGGER_TYPE_INFO:
-				std::cout << this->rcs_console.Green << " [INFO] " << this->rcs_console.Reset;
+				if (this->ic20_device_gbPrint == true) {
+					printf(this->rcs_console.Green); printf("[INFO]"); printf(this->rcs_console.Reset);
+				}
+				else if (this->ic20_device_gbPrint == false) {
+					std::cout << this->rcs_console.Green << " [INFO] " << this->rcs_console.Reset;
+				}
+				
 				break;
 			case ICG20_CONSOLE_LOGGER_TYPE_WARNING:
-				std::cout << this->rcs_console.Yellow << " [WARN] " << this->rcs_console.Reset;
+
+				if (this->ic20_device_gbPrint == true) {
+					printf(this->rcs_console.Orange); printf("[WARN]"); printf(this->rcs_console.Reset);
+				}
+				else if (this->ic20_device_gbPrint == false) {
+					std::cout << this->rcs_console.Orange << " [WARN] " << this->rcs_console.Reset;
+				}
+				
 				break;
 			case ICG20_CONSOLE_LOGGER_TYPE_ERROR:
-				std::cout << this->rcs_console.Red << " [ERROR] " << this->rcs_console.Reset;
+				if (this->ic20_device_gbPrint == true) {
+					printf(this->rcs_console.Red); printf("[ERROR]"); printf(this->rcs_console.Reset);
+				}
+				else if (this->ic20_device_gbPrint == false) {
+					std::cout << this->rcs_console.Red << " [ERROR] " << this->rcs_console.Reset;
+				}
+				
 				break;
 			case ICG20_CONSOLE_LOGGER_TYPE_LOG:
-				std::cout << this->rcs_console.Cyan << " [LOG] " << this->rcs_console.Reset;
+				if (this->ic20_device_gbPrint == true) {
+					printf(this->rcs_console.Cyan); printf("[LOG]"); printf(this->rcs_console.Reset);
+				}
+				else if (this->ic20_device_gbPrint == false) {
+					std::cout << this->rcs_console.Cyan << " [LOG] " << this->rcs_console.Reset;
+				}
+				
 				break;
 			case ICG20_CONSOLE_LOGGER_TYPE_FATAL:
-				std::cout << this->rcs_console.Magenta << " [FATAL] " << this->rcs_console.Reset;
+				if (this->ic20_device_gbPrint == true) {
+					printf(this->rcs_console.Magenta); printf("[INFO]"); printf(this->rcs_console.Reset);
+				}
+				else if (this->ic20_device_gbPrint == false) {
+					std::cout << this->rcs_console.Magenta << " [FATAL] " << this->rcs_console.Reset;
+				}
+			
 				break;
 			case ICG20_CONSOLE_LOGGER_TYPE_EVENT:
-				std::cout << this->rcs_console.Blue << " [EVENT] " << this->rcs_console.Reset;
+				if (this->ic20_device_gbPrint == true) {
+					printf(this->rcs_console.Blue); printf("[EVENT]"); printf(this->rcs_console.Reset);
+				}
+				else if (this->ic20_device_gbPrint == false) {
+					std::cout << this->rcs_console.Blue << " [EVENT] " << this->rcs_console.Reset;
+				}
+				
 				break;
 			case ICG20_CONSOLE_LOGGER_TYPE_FILE:
-				std::cout << this->rcs_console.Green << " [FILE] " << this->rcs_console.Reset;
+				if (this->ic20_device_gbPrint == true) {
+					printf(this->rcs_console.Green); printf("[FILE]"); printf(this->rcs_console.Reset);
+				}
+				else if (this->ic20_device_gbPrint == false) {
+					std::cout << this->rcs_console.Green << " [FILE] " << this->rcs_console.Reset;
+				}
+				
 				break;
 			case ICG20_CONSOLE_LOGGER_TYPE_SHADER:
-				std::cout << this->rcs_console.Cyan << " [SHADER] " << this->rcs_console.Reset;
+				if (this->ic20_device_gbPrint == true) {
+					printf(this->rcs_console.Cyan); printf("[SHADER]"); printf(this->rcs_console.Reset);
+				}
+				else if (this->ic20_device_gbPrint == false) {
+					std::cout << this->rcs_console.Cyan << " [SHADER] " << this->rcs_console.Reset;
+				}
+				
 				break;
 			case ICG20_CONSOLE_LOGGER_TYPE_SHADER_DEBUG:
-				std::cout << this->rcs_console.Cyan << " [SHADER::DEBUG] " << this->rcs_console.Reset;
+				if (this->ic20_device_gbPrint == true) {
+					printf(this->rcs_console.Cyan); printf("[SHADER::DEBUG]"); printf(this->rcs_console.Reset);
+				}
+				else if (this->ic20_device_gbPrint == false) {
+					std::cout << this->rcs_console.Cyan << " [SHADER::DEBUG] " << this->rcs_console.Reset;
+				}
+				
 				break;
 			case ICG20_CONSOLE_LOGGER_TYPE_DEBUG:
-				std::cout << this->rcs_console.Magenta << " [DEBUG] " << this->rcs_console.Reset;
+				if (this->ic20_device_gbPrint == true) {
+					printf(this->rcs_console.Magenta); printf("[DEBUG]"); printf(this->rcs_console.Reset);
+				}
+				else if (this->ic20_device_gbPrint == false) {
+					std::cout << this->rcs_console.Magenta << " [DEBUG] " << this->rcs_console.Reset;
+				}
+				
 				break;
+			case ICG20_CONSOLE_LOGGER_TYPE_DOWNLOAD:
+				if (this->ic20_device_gbPrint == true) {
+					printf(this->rcs_console.Red); printf("[DOWNLOADING]"); printf(this->rcs_console.Reset);
+				}
+				else if (this->ic20_device_gbPrint == false) {
+					std::cout << this->rcs_console.Red << " [DOWNLOADING] " << this->rcs_console.Reset;
+				}
+				
+			break;
+			case ICG20_CONSOLE_LOGGER_TYPE_SYSTEM:
+				if (this->ic20_device_gbPrint == true) {
+					printf(this->rcs_console.Blue); printf("[SYS]"); printf(this->rcs_console.Reset);
+				}
+				else if (this->ic20_device_gbPrint == false) {
+					std::cout << this->rcs_console.Blue << " [SYS] " << this->rcs_console.Reset;
+				}
+			
+			break;
+			case ICG20_CONOSLE_LOGGER_TYPE_WEBENGINE:
+				if (this->ic20_device_gbPrint == true) {
+					printf(this->rcs_console.Cyan); printf("[WB.ENGINE]"); printf(this->rcs_console.Reset);
+				}
+				else if (this->ic20_device_gbPrint == false) {
+					std::cout << this->rcs_console.Cyan << " [WB.ENGINE] " << this->rcs_console.Reset;
+				}
+				
+			break;
 			default:
 				std::cout << "ILC20LOG -> INVALID -> CONOSLE -> LOGGER -> TYPE -> " << avabileTypes << std::endl;
 				break;
@@ -87,7 +197,6 @@ public:
 			std::cout << "did you called the function?  ' yourclassdefinition->ic20_athm_init(); ' : please call that function is important..." << std::endl;
 		}
 	
-
 		return *this;
 	}
 	ic20_algorithm& c20_print(std::string messageInput) {
