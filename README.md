@@ -9,8 +9,8 @@
 
 ## SUPPORT LIST:
 
-- Linux [❌]
-- Macos [❌ (cooming soon)]
+- Linux [✅]
+- Macos [✅]
 - Windows [✅]
 
 ---
@@ -64,7 +64,8 @@ int main() {
     cLogger->ilc20_exampleMessages();
 }
 ```
-![immagine](https://github.com/WhaGames/ilc20log/assets/130051824/b7a0161c-d994-48db-86f7-38745acbefc6)
+![immagine](https://github.com/WhaGames/ilc20log/assets/130051824/60264840-cb19-47a0-bfe6-97defe133de5)
+
 
 Example Your message Code:
 
