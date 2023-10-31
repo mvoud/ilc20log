@@ -21,45 +21,54 @@
 
 ---
 
-## What symbols support?
 
-For now this...
+## Supported Symbols
 
-- ICG20_CONSOLE_LOGGER_TYPE_INFO
-- ICG20_CONSOLE_LOGGER_TYPE_WARNING
-- ICG20_CONSOLE_LOGGER_TYPE_ERROR
-- ICG20_CONSOLE_LOGGER_TYPE_FATAL
-- ICG20_CONSOLE_LOGGER_TYPE_LOG
-- ICG20_CONSOLE_LOGGER_TYPE_DEBUG
-- ICG20_CONSOLE_LOGGER_TYPE_EVENT
-- ICG20_CONSOLE_LOGGER_TYPE_FILE
-- ICG20_CONSOLE_LOGGER_TYPE_SHADER
-- ICG20_CONSOLE_LOGGER_TYPE_SHADER_DEBUG
-- ICG20_CONSOLE_LOGGER_TYPE_DOWNLOAD
-- ICG20_CONOSLE_LOGGER_TYPE_WEBENGINE
-- ICG20_CONSOLE_LOGGER_TYPE_CONSOLE
-- ICG20_CONSOLE_LOGGER_TYPE_SYSTEM
+The `ilc20log` library supports the following symbols:
 
+- **ICG20_CONSOLE_LOGGER_TYPE_INFO**: This symbol is used for informational messages.
+- **ICG20_CONSOLE_LOGGER_TYPE_WARNING**: This symbol is used for warning messages.
+- **ICG20_CONSOLE_LOGGER_TYPE_ERROR**: This symbol is used for error messages.
+- **ICG20_CONSOLE_LOGGER_TYPE_FATAL**: This symbol is used for fatal error messages.
+- **ICG20_CONSOLE_LOGGER_TYPE_LOG**: This symbol is used for log messages.
+- **ICG20_CONSOLE_LOGGER_TYPE_DEBUG**: This symbol is used for debug messages.
+- **ICG20_CONSOLE_LOGGER_TYPE_EVENT**: This symbol is used for event messages.
+- **ICG20_CONSOLE_LOGGER_TYPE_FILE**: This symbol is used for file-related messages.
+- **ICG20_CONSOLE_LOGGER_TYPE_SHADER**: This symbol is used for shader-related messages.
+- **ICG20_CONSOLE_LOGGER_TYPE_SHADER_DEBUG**: This symbol is used for shader debug messages.
+- **ICG20_CONSOLE_LOGGER_TYPE_DOWNLOAD**: This symbol is used for download-related messages.
+- **ICG20_CONOSLE_LOGGER_TYPE_WEBENGINE**: This symbol is used for web engine-related messages.
+- **ICG20_CONSOLE_LOGGER_TYPE_CONSOLE**: This symbol is used for console-related messages.
+- **ICG20_CONSOLE_LOGGER_TYPE_SYSTEM**: This symbol is used for system-related messages.
+
+Each of these symbols corresponds to a different type of log message, allowing you to categorize and filter your logs as needed.
 ---
 
-## is high syntaxed?
-Yes
+## Setup
 
----
+1. **Setup the header file**: You can do this using Visual Studio or your preferred IDE.
+2. **Include the header files**: In your `main.cpp` file, include the necessary header files. For example:
+    ```cpp
+    #include <icg_algorithm.hpp>
+    ```
+3. **Define your class**: You can define your class as follows:
+    ```cpp
+    ic20_algorithm* cLogger = new ic20_algorithm;
+    ```
+4. **Initialize the library**: You can initialize the library with the following command:
+    ```cpp
+    cLogger->ic20_athm_init();
+    ```
+5. **Define your custom log message**: Now you can define your custom log message. Here are a couple of examples:
+    - To print a message log:
+        ```cpp
+        cLogger->messageType(ICG20_CONSOLE_LOGGER_TYPE_INFO).c20_print("Hello World");
+        ```
+    - To print example messages of all types of logs inside the library:
+        ```cpp
+        cLogger->ilc20_exampleMessages();
+        ```
 
-how can i print this log?
----
-
-first step:
-  - setup the header file using visual studio or your ide
-  - now you can include the header files inside your main.cpp #include <icg_algorithm.hpp>
-  - define your class example: <ic20_algorithm* cLogger = new ic20_algorithm>
-  - initalize the library with cLogger->ic20_athm_init();
-  - after that you can define your custom log message...
-    : this is for print our message log
-    -> cLogger->messageType(ICG20_CONSOLE_LOGGER_TYPE_INFO).c20_print("Hello World");
-    : this is for example messages all types of logs inisde the library
-    -> cLogger->ilc20_exampleMessages();
 ---
 
 Example Logger Code:
