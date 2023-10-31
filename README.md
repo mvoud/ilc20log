@@ -52,7 +52,14 @@ how can i print this log?
 
 first step:
   - setup the header file using visual studio or your ide
-  - now define your class , like this (`ic20_algorithm* cLogger = new ic20_algorithm;`)
+  - now you can include the header files inside your main.cpp #include <icg_algorithm.hpp>
+  - define your class example: <ic20_algorithm* cLogger = new ic20_algorithm>
+  - initalize the library with cLogger->ic20_athm_init();
+  - after that you can define your custom log message...
+    : this is for print our message log
+    -> cLogger->messageType(ICG20_CONSOLE_LOGGER_TYPE_INFO).c20_print("Hello World");
+    : this is for example messages all types of logs inisde the library
+    -> cLogger->ilc20_exampleMessages();
 ---
 
 Example Logger Code:
