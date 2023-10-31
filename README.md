@@ -1,5 +1,24 @@
 # ILC20LOG - FIRST CLR Library
-**clr** = 'console logger'
+
+
+## Pros
+
+1. **Traceability**: ILC20LOG provides solid traceability for the application, allowing for the logging of events, errors, and crucial information. This is essential for troubleshooting and performance monitoring.
+
+2. **Time Savings**: It simplifies the debugging process by offering a detailed record of events, making it easier to identify and resolve bugs efficiently.
+
+3. **Configurability**: Logging libraries like ILC20LOG often offer flexible configuration, enabling you to define what types of messages to log, where to store them, and how to format them.
+
+## Cons
+
+"NO CONS"
+
+## Objectives
+
+1. first is to help out people with console debugging
+2. removeing the option std::cout that is hard to write
+3. easy to implement in the projecte with no interuuption
+
 
 ---
 
