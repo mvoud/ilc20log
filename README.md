@@ -19,14 +19,9 @@
 2. removeing the option std::cout that is hard to write
 3. easy to implement in the projecte with no interuuption
 
-
 ---
 
-## Example function (`ilc20_exampleMessages();`)
-
----
-
-## SUPPORT LIST:
+## FRAMEWORK SUPPORT:
 
 - Linux [✅]
 - Macos [✅]
