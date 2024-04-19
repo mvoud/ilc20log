@@ -1,4 +1,4 @@
-# ILC20LOG - FIRST CLR Library
+# ILC20LOGLIB v2
 
 
 ## Pros
@@ -40,21 +40,23 @@
 
 The `ilc20log` library supports the following symbols:
 
-- **ICG20_CONSOLE_LOGGER_TYPE_INFO**: This symbol is used for informational messages.
-- **ICG20_CONSOLE_LOGGER_TYPE_WARNING**: This symbol is used for warning messages.
-- **ICG20_CONSOLE_LOGGER_TYPE_ERROR**: This symbol is used for error messages.
-- **ICG20_CONSOLE_LOGGER_TYPE_FATAL**: This symbol is used for fatal error messages.
-- **ICG20_CONSOLE_LOGGER_TYPE_LOG**: This symbol is used for log messages.
-- **ICG20_CONSOLE_LOGGER_TYPE_DEBUG**: This symbol is used for debug messages.
-- **ICG20_CONSOLE_LOGGER_TYPE_EVENT**: This symbol is used for event messages.
-- **ICG20_CONSOLE_LOGGER_TYPE_FILE**: This symbol is used for file-related messages.
-- **ICG20_CONSOLE_LOGGER_TYPE_SHADER**: This symbol is used for shader-related messages.
-- **ICG20_CONSOLE_LOGGER_TYPE_SHADER_DEBUG**: This symbol is used for shader debug messages.
-- **ICG20_CONSOLE_LOGGER_TYPE_DOWNLOAD**: This symbol is used for download-related messages.
-- **ICG20_CONOSLE_LOGGER_TYPE_WEBENGINE**: This symbol is used for web engine-related messages.
-- **ICG20_CONSOLE_LOGGER_TYPE_CONSOLE**: This symbol is used for console-related messages.
-- **ICG20_CONSOLE_LOGGER_TYPE_SYSTEM**: This symbol is used for system-related messages.
+- **ICG20_LOGGER_TYPE_INFO**: This symbol is used for informational messages.
+- **ICG20_LOGGER_TYPE_WARNING**: This symbol is used for warning messages.
+- **ICG20_LOGGER_TYPE_ERROR**: This symbol is used for error messages.
+- **ICG20_LOGGER_TYPE_FATAL**: This symbol is used for fatal error messages.
+- **ICG20_LOGGER_TYPE_LOG**: This symbol is used for log messages.
+- **ICG20_LOGGER_TYPE_DEBUG**: This symbol is used for debug messages.
+- **ICG20_LOGGER_TYPE_EVENT**: This symbol is used for event messages.
+- **ICG20_LOGGER_TYPE_FILE**: This symbol is used for file-related messages.
+- **ICG20_LOGGER_TYPE_SHADER**: This symbol is used for shader-related messages.
+- **ICG20_LOGGER_TYPE_SHADER_DEBUG**: This symbol is used for shader debug messages.
+- **ICG20_LOGGER_TYPE_DOWNLOAD**: This symbol is used for download-related messages.
+- **ICG20_LOGGER_TYPE_WEBENGINE**: This symbol is used for web engine-related messages.
+- **ICG20_LOGGER_TYPE_CONSOLE**: This symbol is used for console-related messages.
+- **ICG20_LOGGER_TYPE_SYSTEM**: This symbol is used for system-related messages.
+- **+ popular librarys status**
 
+  
 Each of these symbols corresponds to a different type of log message, allowing you to categorize and filter your logs as needed.
 ---
 
@@ -102,7 +104,7 @@ int main() {
 
 
 Example Your message Code:
-
+-
 ```cpp
 int main() {
 	ic20_algorithm* cLogger = new ic20_algorithm;
@@ -113,9 +115,15 @@ int main() {
 }
 
 ```
+-
 ![immagine](https://github.com/WhaGames/ilc20log/assets/130051824/5eb625c9-f5db-4de6-85c3-a137ec753627)
 
 ---
 
 ## Will you expand this library with custom user options?
 Yes, I will expand this library with custom options by the user but for now it only provides pre-defined messages...
+
+
+## UPDATE v2 [19/04/2024]:
+
+Cooming Soon....
