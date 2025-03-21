@@ -122,8 +122,3 @@ int main() {
 
 ## Will you expand this library with custom user options?
 Yes, I will expand this library with custom options by the user but for now it only provides pre-defined messages...
-
-
-## UPDATE v2 [19/04/2024]:
-
-Cooming Soon....
